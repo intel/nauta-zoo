@@ -1,0 +1,4 @@
+name: tf-mkl-dlrs
+apiVersion: v1
+description: Tensorflow training chart for Kubernetes multi node
+version: 0.0.1
