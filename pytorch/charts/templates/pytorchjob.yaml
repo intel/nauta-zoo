@@ -90,6 +90,11 @@ spec:
         metadata:
           annotations:
             scheduling.k8s.io/group-name: {{ .Release.Name }}-podgroup
+            buildID: {{ .Values.buildID }}
+          labels:
+            app: {{ template "name" . }}
+            release: {{ .Release.Name }}
+            runName: {{ .Release.Name }}
         spec:
           containers:
             - name: pytorch
