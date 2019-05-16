@@ -35,6 +35,7 @@ workersCount: 1
 cpu_fraction: 1
 memory_fraction: 1
 
+# Settings below are not intended to be modified
 experimentName: {{ NAUTA.ExperimentName }}
 commandline:
   args:

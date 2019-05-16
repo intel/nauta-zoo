@@ -2,20 +2,10 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-dataPath: '/mnt/input/home/data'
-modelPath: '/mnt/input/home/models'
-modelName: 'mnist'
-outputPath: '/mnt/output/experiment'
-inputFormat: 'pb'
-
-containerPort: 8500
-
-image:
-  pullPolicy: IfNotPresent
-  clusterRepository: {{ NAUTA.ExperimentImage }}
-
+# Count of batch inference workers
 workersCount: 1
 
+# Resorce settings for batch inference instance
 resources:
   requests:
     cpu: 19
@@ -24,22 +14,40 @@ resources:
     cpu: 19
     memory: 93604421089
 
+# Shorthands for setting both limits and requests of batch inference instance's cpu/memory
 cpu: null
 memory: null
 
+# Resorce settings for batch inference wrapper
 batch_wrapper_resources:
   requests:
     cpu: 2
     memory: 1Gi
 
+# Shorthands for setting both limits and requests of wrapper's cpu/memory
 wrapper_cpu: null
 wrapper_memory: null
 
+# Logging level of batch inference wrapper
+logLevel: 'INFO'
+
+# Settings for CLI automatic resource configuration
+cpu_fraction: 0.5
+memory_fraction: 0.5
+
+# Settings below are not intended to be modified
 experimentName: {{ NAUTA.ExperimentName }} 
 podCount: 2
 registryPort: {{ NAUTA.RegistryPort }}
 
-logLevel: 'INFO'
+dataPath: '/mnt/input/home/data'
+modelPath: '/mnt/input/home/models'
+modelName: ''
+outputPath: '/mnt/output/experiment'
+inputFormat: 'pb'
 
-cpu_fraction: 0.5
-memory_fraction: 0.5
+containerPort: 8500
+
+image:
+  pullPolicy: IfNotPresent
+  clusterRepository: {{ NAUTA.ExperimentImage }}

@@ -81,7 +81,7 @@ image:
   clusterRepository: {{ NAUTA.ExperimentImage }}
   pullPolicy: IfNotPresent
 
-  volumeMounts:
+volumeMounts:
   - name: input-home
     mountPath: /mnt/input/home
     readOnly: True

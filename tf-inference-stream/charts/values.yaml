@@ -2,6 +2,24 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+# Count of stream inference workers
+workersCount: 1
+
+# Resorce settings for stream inference instance
+resources:
+  requests:
+    cpu: 19
+    memory: 93604421089
+  limits:
+    cpu: 19
+    memory: 93604421089
+
+# Shorthands for setting both limits and requests of cpu/memory
+cpu: null
+memory: null
+
+
+# Settings below are not intended to be modified
 modelPath: ''
 modelName: ''
 
@@ -12,21 +30,9 @@ image:
   pullPolicy: IfNotPresent
   clusterRepository: {{ NAUTA.ExperimentImage }}
 
-workersCount: 1
-
-resources:
-  requests:
-    cpu: 19
-    memory: 93604421089
-  limits:
-    cpu: 19
-    memory: 93604421089
-
-cpu: null
-memory: null
-
 experimentName: {{ NAUTA.ExperimentName }} 
 podCount: 1
 
+# Settings for CLI automatic resource configuration
 cpu_fraction: 0.5
 memory_fraction: 0.5
