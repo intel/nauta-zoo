@@ -2,9 +2,70 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+# Count of additional workers, besides master worker
+workersCount: 3
+
+master:
+  env:
+    - name: HOROVOD_TIMELINE
+      value: "/mnt/output/experiment/timeline.json"  # Path to where horovod timeline log will be saved
+    - name: OMP_NUM_THREADS
+      value: "20"  # Set to the number of physical cores used by single worker
+    - name: KMP_BLOCKTIME
+      value: "0"  # 0 is a good default for most CNN models, could be adjusted for additional performance
+    - name: KMP_AFFINITY
+      value: "granularity=fine,verbose,compact,1,0"  # these are reccomended affinity settings
+
+worker:
+  podManagementPolicy: Parallel
+  env:
+    - name: OMP_NUM_THREADS
+      value: "20"  # Set to the number of physical cores used by single worker
+    - name: KMP_BLOCKTIME
+      value: "0"  # 0 is a good default for most CNN models, could be adjusted for additional performance
+    - name: KMP_AFFINITY
+      value: "granularity=fine,verbose,compact,1,0"  # these are reccomended affinity settings
+
+resources:
+  requests:
+    cpu: 38 # Minimal number of logical processors requested
+    memory: 187208842179
+  limits:
+    cpu: 38 # Maximal number of logical processors requested
+    memory: 187208842179
+
+# Number of physical processors that will be used by Horovod
+cpus: 20
+
+# Shorthands for setting both limits and requests of cpu/memory
+cpu: null
+memory: null
+
+
+# Number of training processes that will be run on each worker
+processesPerNode: 2
+
+# Settings for cli auto resource configuration
+cpu_fraction: 1
+memory_fraction: 1
+
+# Using host network may yield performance gains on some environments
 useHostNetwork: false
+# If useHostNetwork is set to True, hostNetworkInterface must point to network interface that will be used
+# for communication between horovod workers (e.g. eth0/ens1)
 hostNetworkInterface: ""
+
 useHostPID: false
+
+# Settings below are not intended for modification
+
+# Placeholder for podCount - this value is modified by CLI
+podCount: 1
+
+runKind: "training"
+
+experimentName: {{ NAUTA.ExperimentName }}
+registryPort: {{ NAUTA.RegistryPort }}
 
 commandline:
   args:
@@ -20,9 +81,7 @@ image:
   clusterRepository: {{ NAUTA.ExperimentImage }}
   pullPolicy: IfNotPresent
 
-workersCount: 3
-
-volumeMounts:
+  volumeMounts:
   - name: input-home
     mountPath: /mnt/input/home
     readOnly: True
@@ -54,38 +113,3 @@ volumes:
   - name: output-public
     persistentVolumeClaim:
       claimName: output-public
-
-worker:
-  podManagementPolicy: Parallel
-
-master:
-  env:
-    - name: HOROVOD_TIMELINE
-      value: "/mnt/output/experiment/timeline.json"
-    - name: OMP_NUM_THREADS
-      value: "20"
-runKind: "training"
-
-experimentName: {{ NAUTA.ExperimentName }}
-registryPort: {{ NAUTA.RegistryPort }}
-
-podCount: 1
-
-resources:
-  requests:
-    cpu: 38 # Minimal number of logical processors requested
-    memory: 187208842179
-  limits:
-    cpu: 38 # Maximal number of logical processors requested
-    memory: 187208842179
-
-cpu: null
-memory: null
-
-# Number of physical processors that will be used by Horovod
-cpus: 20
-
-processesPerNode: 2
-
-cpu_fraction: 1
-memory_fraction: 1

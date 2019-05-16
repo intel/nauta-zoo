@@ -18,6 +18,7 @@ image:
 service:
   type: ClusterIP
 
+# Resorce settings for training pod
 resources:
   requests:
     cpu: 19
@@ -26,10 +27,21 @@ resources:
     cpu: 19
     memory: 93604421089
 
+# Shorthands for setting both limits and requests of cpu/memory
 cpu: null
 memory: null
+
+env:
+  - name: OMP_NUM_THREADS
+    value: "20"  # Set to the number of physical cores used by single worker
+  - name: KMP_BLOCKTIME
+    value: "0"  # 0 is a good default for most CNN models, could be adjusted for additional performance
+  - name: KMP_AFFINITY
+    value: "granularity=fine,verbose,compact,1,0"  # these are reccomended affinity settings
 
 experimentName: {{ NAUTA.ExperimentName }} 
 podCount: 1
 
+# Settings for CLI automatic resource configuration
 cpu_fraction: 0.5
+memory_fraction: 0.5
