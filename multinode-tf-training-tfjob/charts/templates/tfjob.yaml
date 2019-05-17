@@ -40,7 +40,7 @@ spec:
               - name: RUN_NAME
                 value: {{ .Release.Name }}
 {{ if .Values.env }}
-{{ toYaml .Values.env | indent 16 }}
+{{ toYaml .Values.env | indent 14 }}
 {{ end }}
               ports:
                 - containerPort: {{ .Values.TensorBoardPort }}
