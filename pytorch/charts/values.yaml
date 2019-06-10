@@ -14,22 +14,22 @@ image:
 
 worker_resources:
   requests:
-    cpu: 76
-    memory: 252.7Gi
+    cpu: 38
+    memory: 189.4Gi
   limits:
-    cpu: 76
-    memory: 252.7Gi
+    cpu: 38
+    memory: 189.4Gi
 
 worker_cpu: null
 worker_memory: null
 
 master_resources:
   requests:
-    cpu: 76
-    memory: 252.7Gi
+    cpu: 38
+    memory: 189.4Gi
   limits:
-    cpu: 76
-    memory: 252.7Gi
+    cpu: 38
+    memory: 189.4Gi
 
 master_cpu: null
 master_memory: null
