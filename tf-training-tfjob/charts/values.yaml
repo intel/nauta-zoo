@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-# Resorce settings for training pod
+# Resource settings for training pod
 resources:
   requests:
     cpu: 19
@@ -21,7 +21,7 @@ env:
   - name: KMP_BLOCKTIME
     value: "0"  # 0 is a good default for most CNN models, could be adjusted for additional performance
   - name: KMP_AFFINITY
-    value: "granularity=fine,verbose,compact,1,0"  # these are reccomended affinity settings
+    value: "granularity=fine,verbose,compact,1,0"  # these are recommended affinity settings
 
 
 # Settings for CLI automatic resource configuration

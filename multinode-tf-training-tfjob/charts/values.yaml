@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-# Resorce settings for training workers
+# Resource settings for training workers
 worker_resources:
   requests:
     cpu: 38
@@ -15,7 +15,7 @@ worker_resources:
 worker_cpu: null
 worker_memory: null
 
-# Resorce settings for parameter servers
+# Resource settings for parameter servers
 ps_resources:
   requests:
     cpu: 38
@@ -48,7 +48,7 @@ env:
   - name: KMP_BLOCKTIME
     value: "0"  # 0 is a good default for most CNN models, could be adjusted for additional performance
   - name: KMP_AFFINITY
-    value: "granularity=fine,verbose,compact,1,0"  # these are reccomended affinity settings
+    value: "granularity=fine,verbose,compact,1,0"  # these are recommended affinity settings
 
 # Count of training workers
 workersCount: 3

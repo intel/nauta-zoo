@@ -5,7 +5,7 @@
 # Count of batch inference workers
 workersCount: 1
 
-# Resorce settings for batch inference instance
+# Resource settings for batch inference instance
 resources:
   requests:
     cpu: 19
@@ -18,7 +18,7 @@ resources:
 cpu: null
 memory: null
 
-# Resorce settings for batch inference wrapper
+# Resource settings for batch inference wrapper
 batch_wrapper_resources:
   requests:
     cpu: 2

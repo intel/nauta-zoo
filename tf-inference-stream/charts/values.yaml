@@ -5,7 +5,7 @@
 # Count of stream inference workers
 workersCount: 1
 
-# Resorce settings for stream inference instance
+# Resource settings for stream inference instance
 resources:
   requests:
     cpu: 19

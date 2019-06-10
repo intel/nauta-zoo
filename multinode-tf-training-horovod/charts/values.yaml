@@ -14,7 +14,7 @@ master:
     - name: KMP_BLOCKTIME
       value: "0"  # 0 is a good default for most CNN models, could be adjusted for additional performance
     - name: KMP_AFFINITY
-      value: "granularity=fine,verbose,compact,1,0"  # these are reccomended affinity settings
+      value: "granularity=fine,verbose,compact,1,0"  # these are recommended affinity settings
 
 worker:
   podManagementPolicy: Parallel
@@ -24,7 +24,7 @@ worker:
     - name: KMP_BLOCKTIME
       value: "0"  # 0 is a good default for most CNN models, could be adjusted for additional performance
     - name: KMP_AFFINITY
-      value: "granularity=fine,verbose,compact,1,0"  # these are reccomended affinity settings
+      value: "granularity=fine,verbose,compact,1,0"  # these are recommended affinity settings
 
 resources:
   requests:
