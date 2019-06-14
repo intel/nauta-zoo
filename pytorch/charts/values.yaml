@@ -15,10 +15,10 @@ image:
 worker_resources:
   requests:
     cpu: 38
-    memory: 189.4Gi
+    memory: 187208842179
   limits:
     cpu: 38
-    memory: 189.4Gi
+    memory: 187208842179
 
 worker_cpu: null
 worker_memory: null
@@ -26,10 +26,10 @@ worker_memory: null
 master_resources:
   requests:
     cpu: 38
-    memory: 189.4Gi
+    memory: 187208842179
   limits:
     cpu: 38
-    memory: 189.4Gi
+    memory: 187208842179
 
 master_cpu: null
 master_memory: null
