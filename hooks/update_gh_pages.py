@@ -55,7 +55,6 @@ def get_templates_metadata(repo_path: str, template_dirs: Set[str]) -> Dict[str,
     templates_metadata = {}
     metadata_fields = {'version', 'description'}
     for template_dir in template_dirs:
-        # TODO: handle errors properly
         try:
             templates_metadata[template_dir] = parse_template_metadata(f'{repo_path}/{template_dir}/charts/Chart.yaml',
                                                                        metadata_fields=metadata_fields)
