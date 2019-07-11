@@ -2,67 +2,67 @@
   "templates": [
     {
       "name": "jupyter",
-      "url": "jupyter.tar.gz",
+      "url": "jupyter.tar.bz2",
       "version": "0.1.0",
       "description": "Pack with Jupyter Notebook for purpose of interactive sessions"
     },
     {
       "name": "jupyter-py2",
-      "url": "jupyter-py2.tar.gz",
+      "url": "jupyter-py2.tar.bz2",
       "version": "0.1.0",
       "description": "Pack with Jupyter Notebook for purpose of interactive sessions"
     },
     {
       "name": "multinode-tf-training-horovod",
-      "url": "multinode-tf-training-horovod.tar.gz",
+      "url": "multinode-tf-training-horovod.tar.bz2",
       "version": "0.2.1",
       "description": "A Helm chart for deploying Horovod"
     },
     {
       "name": "multinode-tf-training-horovod-py2",
-      "url": "multinode-tf-training-horovod-py2.tar.gz",
+      "url": "multinode-tf-training-horovod-py2.tar.bz2",
       "version": "0.2.1",
       "description": "A Helm chart for deploying Horovod"
     },
     {
       "name": "multinode-tf-training-tfjob",
-      "url": "multinode-tf-training-tfjob.tar.gz",
+      "url": "multinode-tf-training-tfjob.tar.bz2",
       "version": "0.1.0",
       "description": "Tensorflow training chart for Kubernetes multi node"
     },
     {
       "name": "multinode-tf-training-tfjob-py2",
-      "url": "multinode-tf-training-tfjob-py2.tar.gz",
+      "url": "multinode-tf-training-tfjob-py2.tar.bz2",
       "version": "0.1.0",
       "description": "Tensorflow training chart for Kubernetes multi node"
     },
     {
       "name": "pytorch",
-      "url": "pytorch.tar.gz",
+      "url": "pytorch.tar.bz2",
       "version": "0.0.1",
       "description": "Pytorch training chart for Kubernetes"
     },
     {
       "name": "tf-inference-batch",
-      "url": "tf-inference-batch.tar.gz",
+      "url": "tf-inference-batch.tar.bz2",
       "version": "0.1.0",
       "description": "tensorflow-serving batch inference chart"
     },
     {
       "name": "tf-inference-stream",
-      "url": "tf-inference-stream.tar.gz",
+      "url": "tf-inference-stream.tar.bz2",
       "version": "0.1.0",
       "description": "tensorflow-serving stream inference chart"
     },
     {
       "name": "tf-training-tfjob",
-      "url": "tf-training-tfjob.tar.gz",
+      "url": "tf-training-tfjob.tar.bz2",
       "version": "0.1.0",
       "description": "Tensorflow training chart for Kubernetes single node"
     },
     {
       "name": "tf-training-tfjob-py2",
-      "url": "tf-training-tfjob-py2.tar.gz",
+      "url": "tf-training-tfjob-py2.tar.bz2",
       "version": "0.1.0",
       "description": "Tensorflow training chart for Kubernetes single node"
     }

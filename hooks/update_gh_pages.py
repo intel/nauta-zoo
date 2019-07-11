@@ -1,5 +1,19 @@
 #!/usr/bin/env python3
-
+#
+# Copyright (c) 2019 Intel Corporation
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 # This script may be used as pre commit hook
 
 import json
@@ -30,10 +44,8 @@ def get_template_dirs(repository_filenames: Sequence[str]) -> Set[str]:
 
 def pack_template_dirs(repo_path: str, template_dirs: Set[str]):
     for template_dir in template_dirs:
-        subprocess.check_call(['tar', '-czf', f'{repo_path}/docs/{template_dir}.tar.gz', '-C',
+        subprocess.check_call(['tar', '-cvjf', f'{repo_path}/docs/{template_dir}.tar.bz2', '-C',
                                f'{repo_path}', f'{template_dir}'])
-
-# TODO: Calculate packs checksums
 
 
 def parse_template_metadata(chart_yaml_path: str, metadata_fields: Set[str]) -> Dict[str, str]:
@@ -55,7 +67,6 @@ def get_templates_metadata(repo_path: str, template_dirs: Set[str]) -> Dict[str,
     templates_metadata = {}
     metadata_fields = {'version', 'description'}
     for template_dir in template_dirs:
-        # TODO: handle errors properly
         try:
             templates_metadata[template_dir] = parse_template_metadata(f'{repo_path}/{template_dir}/charts/Chart.yaml',
                                                                        metadata_fields=metadata_fields)
@@ -70,7 +81,7 @@ def get_templates_metadata(repo_path: str, template_dirs: Set[str]) -> Dict[str,
 def prepare_templates_json(repo_path: str, template_dirs: Set[str], templates_metadata: Dict[str, Dict]):
     zoo_manifest = {
         'templates': [{'name': template_dir,
-                       'url': f'{template_dir}.tar.gz',
+                       'url': f'{template_dir}.tar.bz2',
                        'version': templates_metadata[template_dir]['version'],
                        'description': templates_metadata[template_dir]['description']}
                       for template_dir in sorted(template_dirs)],
