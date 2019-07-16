@@ -36,11 +36,11 @@ spec:
               ]
               resources:
                 requests:
-                  cpu: {{ default .Values.master_resources.requests.cpu .Values.master_cpu}}
+                  cpu: {{ default .Values.master_resources.requests.cpu .Values.master_cpu }}
                   memory: {{ default .Values.master_resources.requests.memory .Values.master_memory }}
                 limits:
-                  cpu: {{ default .Values.master_resources.limits.cpu .Values.worker_cpu }}
-                  memory: {{ default .Values.master_resources.limits.memory .Values.worker_memory }}
+                  cpu: {{ default .Values.master_resources.limits.cpu .Values.master_cpu }}
+                  memory: {{ default .Values.master_resources.limits.memory .Values.master_memory }}
               volumeMounts:
                 - name: input-home
                   mountPath: /mnt/input/home
