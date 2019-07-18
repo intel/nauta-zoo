@@ -1,0 +1,4 @@
+name: ovms-inference-stream
+apiVersion: v1
+description: openvino model server stream inference chart
+version: 0.1.0

@@ -37,6 +37,18 @@
       "description": "Tensorflow training chart for Kubernetes multi node"
     },
     {
+      "name": "ovms-inference-batch",
+      "url": "ovms-inference-batch.tar.bz2",
+      "version": "0.1.0",
+      "description": "open vino model server batch inference chart"
+    },
+    {
+      "name": "ovms-inference-stream",
+      "url": "ovms-inference-stream.tar.bz2",
+      "version": "0.1.0",
+      "description": "openvino model server stream inference chart"
+    },
+    {
       "name": "pytorch",
       "url": "pytorch.tar.bz2",
       "version": "0.0.1",
