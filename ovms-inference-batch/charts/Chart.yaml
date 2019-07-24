@@ -1,0 +1,4 @@
+name: ovms-inference-batch
+apiVersion: v1
+description: open vino model server batch inference chart
+version: 0.1.0
