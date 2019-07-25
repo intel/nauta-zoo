@@ -2,15 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-JupyterPort: 8888
-
-image:
-  pullPolicy: IfNotPresent
-  clusterRepository: {{ NAUTA.ExperimentImage }}
-
-service:
-  type: ClusterIP
-
+# Resource settings
 resources:
   requests:
     cpu: 19
@@ -19,11 +11,21 @@ resources:
     cpu: 19
     memory: 93604421089
 
+# Shorthands for setting both limits and requests of cpu/memory
 cpu: null
 memory: null
 
-experimentName:  {{ NAUTA.ExperimentName }} 
-podCount: 1
-
+# Settings for CLI automatic resource configuration
 cpu_fraction: 0.5
 memory_fraction: 0.5
+
+# Settings below  are not intended to be changed
+JupyterPort: 8888
+image:
+  pullPolicy: IfNotPresent
+  clusterRepository: {{ NAUTA.ExperimentImage }}
+
+service:
+  type: ClusterIP
+experimentName:  {{ NAUTA.ExperimentName }} 
+podCount: 1

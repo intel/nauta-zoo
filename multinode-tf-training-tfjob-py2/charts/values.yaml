@@ -2,6 +2,68 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+# Resource settings for training workers
+worker_resources:
+  requests:
+    cpu: 38
+    memory: 187208842179
+  limits:
+    cpu: 38
+    memory: 187208842179
+
+# Shorthands for setting both limits and requests of workers' cpu/memory
+worker_cpu: null
+worker_memory: null
+
+# Resource settings for parameter servers
+ps_resources:
+  requests:
+    cpu: 38
+    memory: 187208842179
+  limits:
+    cpu: 38
+    memory: 187208842179
+
+# Shorthands for setting both limits and requests of parameter servers' cpu/memory
+ps_cpu: null
+ps_memory: null
+
+# Shorthands for setting both limits and requests of utility sidecar's cpu/memory
+sidecar_resources:
+  requests:
+    cpu: 0.01
+    memory: 100Mi
+  limits:
+    cpu: 0.01
+    memory: 100Mi
+
+# Shorthands for setting both limits and requests of sidecar's cpu/memory
+sidecar_cpu: null
+sidecar_memory: null
+
+# Environment variables that will be set on training container
+env:
+  - name: OMP_NUM_THREADS
+    value: "20"  # Set to the number of physical cores used by single worker
+  - name: KMP_BLOCKTIME
+    value: "0"  # 0 is a good default for most CNN models, could be adjusted for additional performance
+  - name: KMP_AFFINITY
+    value: "granularity=fine,verbose,compact,1,0"  # these are recommended affinity settings
+
+# Count of training workers
+workersCount: 3
+
+# Count of parameter servers
+pServersCount: 1
+
+# Settings for CLI automatic resource configuration
+cpu_fraction: 1
+memory_fraction: 1
+
+# Settings below are not intended to be modified
+sidecarLoggingLevel: "WARNING"
+experimentName: {{ NAUTA.ExperimentName }} 
+registryPort: {{ NAUTA.RegistryPort }}
 TensorBoardPort: 8888
 TensorIPythonPort: 6006
 
@@ -17,45 +79,3 @@ image:
 
 service:
   type: ClusterIP
-
-worker_resources:
-  requests:
-    cpu: 38
-    memory: 187208842179
-  limits:
-    cpu: 38
-    memory: 187208842179
-
-worker_cpu: null
-worker_memory: null
-
-ps_resources:
-  requests:
-    cpu: 38
-    memory: 187208842179
-  limits:
-    cpu: 38
-    memory: 187208842179
-
-ps_cpu: null
-ps_memory: null
-
-sidecar_resources:
-  requests:
-    cpu: 0.01
-    memory: 100Mi
-  limits:
-    cpu: 0.01
-    memory: 100Mi
-
-sidecar_cpu: null
-sidecar_memory: null
-
-experimentName: {{ NAUTA.ExperimentName }} 
-registryPort: {{ NAUTA.RegistryPort }}
-workersCount: 3
-sidecarLoggingLevel: "WARNING"
-pServersCount: 1
-
-cpu_fraction: 1
-memory_fraction: 1
