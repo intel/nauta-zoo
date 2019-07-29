@@ -21,7 +21,8 @@ if [ -z \"$(ls -A /models)\" ]; then
     echo 'Error: the provided path to model {{ .Values.modelPath }} is invalid or contains no files.'
     exit 1
 fi
-/opt/conda/bin/python /opt/conda/bin/ie_serving model --model_path ${MODEL_PATH} --model_name ${MODEL_NAME} --port 8500 --rest_port 8501 &
+
+ie_serving model --model_path ${MODEL_PATH} --model_name ${MODEL_NAME} --port 8500 --rest_port 8501 &
 
 while true;
 do
