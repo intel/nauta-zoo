@@ -9,8 +9,6 @@ master:
   env:
     - name: HOROVOD_TIMELINE
       value: "/mnt/output/experiment/timeline.json"  # Path to where horovod timeline log will be saved
-    - name: OMP_NUM_THREADS
-      value: "20"  # Set to the number of physical cores used by single worker
     - name: KMP_BLOCKTIME
       value: "0"  # 0 is a good default for most CNN models, could be adjusted for additional performance
     - name: KMP_AFFINITY
@@ -19,8 +17,6 @@ master:
 worker:
   podManagementPolicy: Parallel
   env:
-    - name: OMP_NUM_THREADS
-      value: "20"  # Set to the number of physical cores used by single worker
     - name: KMP_BLOCKTIME
       value: "0"  # 0 is a good default for most CNN models, could be adjusted for additional performance
     - name: KMP_AFFINITY
