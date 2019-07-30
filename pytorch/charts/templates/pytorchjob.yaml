@@ -27,7 +27,7 @@ spec:
             - name: pytorch
               image: {{ .Values.image.clusterRepository }}
               imagePullPolicy: {{ .Values.image.pullPolicy }}
-              command: ["python"]
+              command: ["python3"]
               args: [
                 "-u",
               {{ range .Values.commandline.args }}
@@ -100,7 +100,7 @@ spec:
             - name: pytorch
               image: {{ .Values.image.clusterRepository }}
               imagePullPolicy: {{ .Values.image.pullPolicy }}
-              command: ["python"]
+              command: ["python3"]
               args: [
                 "-u",
                 {{ range .Values.commandline.args }}
