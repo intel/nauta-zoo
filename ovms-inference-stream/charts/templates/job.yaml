@@ -36,8 +36,6 @@ spec:
               value: "/models"
             - name: MODEL_PATH
               value: "{{ .Values.modelPath }}"
-            - name: OMP_NUM_THREADS
-              value: "{{ .Values.resources.requests.cpu }}"
           command: ["ovms_nauta"]
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
