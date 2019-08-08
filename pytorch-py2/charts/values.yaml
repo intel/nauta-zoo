@@ -1,0 +1,48 @@
+# Default values for charts.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# Resource settings for training workers
+worker_resources:
+  requests:
+    cpu: 38
+    memory: 187208842179
+  limits:
+    cpu: 38
+    memory: 187208842179
+
+# Shorthands for setting both limits and requests of workers' cpu/memory
+worker_cpu: null
+worker_memory: null
+
+# Resource settings for master
+master_resources:
+  requests:
+    cpu: 38
+    memory: 187208842179
+  limits:
+    cpu: 38
+    memory: 187208842179
+
+# Shorthands for setting both limits and requests of master's cpu/memory
+master_cpu: null
+master_memory: null
+
+# Count of training workers
+workersCount: 1
+
+# Settings for CLI automatic resource configuration
+cpu_fraction: 1
+memory_fraction: 1
+
+# Settings below are not intended to be modified
+experimentName: {{ NAUTA.ExperimentName }}
+commandline:
+  args:
+    {% for arg in NAUTA.CommandLine %}
+    - {{ arg }}
+    {% endfor %}
+
+image:
+  pullPolicy: IfNotPresent
+  clusterRepository: {{ NAUTA.ExperimentImage }}
