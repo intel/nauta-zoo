@@ -55,6 +55,12 @@
       "description": "Pytorch training chart for Kubernetes"
     },
     {
+      "name": "pytorch-py2",
+      "url": "pytorch-py2.tar.bz2",
+      "version": "0.0.1",
+      "description": "Pytorch training chart for Kubernetes"
+    },
+    {
       "name": "tf-inference-batch",
       "url": "tf-inference-batch.tar.bz2",
       "version": "0.1.0",
