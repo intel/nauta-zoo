@@ -17,7 +17,7 @@
 
 cp -rf ${MODEL_PATH}/. ${MODEL_BASE_PATH}
 
-if [ -z \"$(ls -A /models)\" ]; then
+if [ -z "$(ls -A ${MODEL_BASE_PATH})" ]; then
     echo 'Error: the provided path to model {{ .Values.modelPath }} is invalid or contains no files.'
     exit 1
 fi
