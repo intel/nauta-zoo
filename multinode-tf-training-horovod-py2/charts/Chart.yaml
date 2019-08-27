@@ -9,4 +9,4 @@ name: multinode-tf-training-horovod-py2
 sources:
 - https://github.com/uber/horovod
 - https://github.com/uber/horovod/blob/master/docs/docker.md
-version: 0.2.1
+version: 0.2.2
