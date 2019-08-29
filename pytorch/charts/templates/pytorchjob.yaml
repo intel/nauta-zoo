@@ -12,7 +12,7 @@ spec:
   pytorchReplicaSpecs:
     Master:
       replicas: 1
-      restartPolicy: OnFailure
+      restartPolicy: Never
       template:
         metadata:
           annotations:
