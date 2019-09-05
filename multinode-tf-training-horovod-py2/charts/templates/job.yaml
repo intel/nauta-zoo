@@ -112,7 +112,7 @@ spec:
             cpu: {{ default .Values.resources.limits.cpu .Values.cpu }}
             memory: {{ default .Values.resources.limits.memory .Values.memory }}
       - name: kubectl
-        image: "127.0.0.1:{{ .Values.registryPort }}/nauta/kubectl:1.13.10"
+        image: "127.0.0.1:{{ .Values.registryPort }}/nauta/kubectl:1.15.3"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
           - name: STS_NAME
