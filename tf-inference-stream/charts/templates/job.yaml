@@ -52,7 +52,7 @@ spec:
           readinessProbe:
             httpGet:
               port: rest-port
-              path: \
+              path: /
             initialDelaySeconds: 10
             timeoutSeconds: 300
           volumeMounts:
