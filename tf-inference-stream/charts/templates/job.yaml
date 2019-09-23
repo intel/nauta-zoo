@@ -49,10 +49,17 @@ spec:
               name: grpc-port
             - containerPort: {{ .Values.restContainerPort }}
               name: rest-port
-          readinessProbe:
-            tcpSocket:
+          livenessProbe:
+            httpGet:
               port: rest-port
-            initialDelaySeconds: 10
+              path: "/v1/models/{{ .Values.modelName }}"
+            initialDelaySeconds: 2
+            timeoutSeconds: 300
+          readinessProbe:
+            httpGet:
+              port: rest-port
+              path: "/v1/models/{{ .Values.modelName }}"
+            initialDelaySeconds: 2
             timeoutSeconds: 300
           volumeMounts:
             - name: input-home
