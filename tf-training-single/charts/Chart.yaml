@@ -1,0 +1,4 @@
+name: tf-training-single
+apiVersion: v1
+description: A TensorFlow single-node training job based on TfJob using Python 3.
+version: 0.1.0

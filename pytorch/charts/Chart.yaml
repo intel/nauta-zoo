@@ -1,4 +1,0 @@
-name: pytorch
-apiVersion: v1
-description: A PyTorch single or multi-node training job using Python 3.
-version: 0.0.1
