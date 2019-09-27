@@ -1,4 +1,4 @@
 name: jupyter
 apiVersion: v1
-description: Pack with Jupyter Notebook for purpose of interactive sessions
+description: An interactive session based on Jupyter Notebook using Python 3.
 version: 0.1.0

@@ -1,4 +1,4 @@
 name: tf-inference-batch
 apiVersion: v1
-description: tensorflow-serving batch inference chart
+description: A TensorFlow Serving inference job for batch predictions.
 version: 0.1.0
