@@ -1,6 +1,6 @@
 apiVersion: v1
 appVersion: 0.12.1
-description: A Helm chart for deploying Horovod
+description: A TensorFlow multi-node training job based on Horovod using Python 3.
 home: https://eng.uber.com/horovod/
 maintainers:
 - email: cheyang@163.com

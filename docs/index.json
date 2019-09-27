@@ -4,85 +4,85 @@
       "name": "jupyter",
       "url": "jupyter.tar.bz2",
       "version": "0.1.0",
-      "description": "Pack with Jupyter Notebook for purpose of interactive sessions"
+      "description": "An interactive session based on Jupyter Notebook using Python 3."
     },
     {
       "name": "jupyter-py2",
       "url": "jupyter-py2.tar.bz2",
       "version": "0.1.0",
-      "description": "Pack with Jupyter Notebook for purpose of interactive sessions"
+      "description": "An interactive session based on Jupyter Notebook using Python 2."
     },
     {
       "name": "multinode-tf-training-horovod",
       "url": "multinode-tf-training-horovod.tar.bz2",
       "version": "0.2.2",
-      "description": "A Helm chart for deploying Horovod"
+      "description": "A TensorFlow multi-node training job based on Horovod using Python 3."
     },
     {
       "name": "multinode-tf-training-horovod-py2",
       "url": "multinode-tf-training-horovod-py2.tar.bz2",
       "version": "0.2.2",
-      "description": "A Helm chart for deploying Horovod"
+      "description": "A TensorFlow multi-node training job based on Horovod using Python 2."
     },
     {
       "name": "multinode-tf-training-tfjob",
       "url": "multinode-tf-training-tfjob.tar.bz2",
       "version": "0.1.0",
-      "description": "Tensorflow training chart for Kubernetes multi node"
+      "description": "A TensorFlow multi-node training job based on TfJob using Python 3."
     },
     {
       "name": "multinode-tf-training-tfjob-py2",
       "url": "multinode-tf-training-tfjob-py2.tar.bz2",
       "version": "0.1.0",
-      "description": "Tensorflow training chart for Kubernetes multi node"
+      "description": "A TensorFlow multi-node training job based on TfJob using Python 2."
     },
     {
       "name": "ovms-inference-batch",
       "url": "ovms-inference-batch.tar.bz2",
       "version": "0.1.0",
-      "description": "open vino model server batch inference chart"
+      "description": "An OpenVINO model server inference job for batch predictions."
     },
     {
       "name": "ovms-inference-stream",
       "url": "ovms-inference-stream.tar.bz2",
       "version": "0.1.0",
-      "description": "openvino model server stream inference chart"
+      "description": "An OpenVINO model server inference job for streaming predictions on a deployed instance."
     },
     {
       "name": "pytorch",
       "url": "pytorch.tar.bz2",
       "version": "0.0.1",
-      "description": "Pytorch training chart for Kubernetes"
+      "description": "A PyTorch single or multi-node training job using Python 3."
     },
     {
       "name": "pytorch-py2",
       "url": "pytorch-py2.tar.bz2",
       "version": "0.0.1",
-      "description": "Pytorch training chart for Kubernetes"
+      "description": "A PyTorch single or multi-node training job using Python 3."
     },
     {
       "name": "tf-inference-batch",
       "url": "tf-inference-batch.tar.bz2",
       "version": "0.1.0",
-      "description": "tensorflow-serving batch inference chart"
+      "description": "A TensorFlow Serving inference job for batch predictions."
     },
     {
       "name": "tf-inference-stream",
       "url": "tf-inference-stream.tar.bz2",
       "version": "0.1.0",
-      "description": "tensorflow-serving stream inference chart"
+      "description": "A TensorFlow Serving inference job for streaming predictions on a deployed instance."
     },
     {
       "name": "tf-training-tfjob",
       "url": "tf-training-tfjob.tar.bz2",
       "version": "0.1.0",
-      "description": "Tensorflow training chart for Kubernetes single node"
+      "description": "A TensorFlow single-node training job based on TfJob using Python 3."
     },
     {
       "name": "tf-training-tfjob-py2",
       "url": "tf-training-tfjob-py2.tar.bz2",
       "version": "0.1.0",
-      "description": "Tensorflow training chart for Kubernetes single node"
+      "description": "A TensorFlow single-node training job based on TfJob using Python 2."
     }
   ]
 }

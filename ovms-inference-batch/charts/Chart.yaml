@@ -1,4 +1,4 @@
 name: ovms-inference-batch
 apiVersion: v1
-description: open vino model server batch inference chart
+description: An OpenVINO model server inference job for batch predictions.
 version: 0.1.0
