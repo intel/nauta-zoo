@@ -1,4 +1,0 @@
-name: ovms-inference-stream
-apiVersion: v1
-description: An OpenVINO model server inference job for streaming predictions on a deployed instance.
-version: 0.1.0
