@@ -1,4 +1,4 @@
-FROM nauta/tensorflow-py3
+FROM mciesielintel/tensorflow:1.12.0-py3
 
 WORKDIR /app
 

@@ -1,4 +1,4 @@
-FROM nauta/openvino-ms
+FROM mciesielintel/openvino-ms:2019.1.1
 
 WORKDIR /app
 ADD training.py .

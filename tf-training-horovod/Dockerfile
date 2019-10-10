@@ -1,4 +1,4 @@
-FROM nauta/horovod-py3
+FROM mciesielintel/horovod:1.9.0-py3
 
 WORKDIR /app
 
