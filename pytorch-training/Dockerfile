@@ -1,4 +1,4 @@
-FROM nauta/pytorch
+FROM mciesielintel/pytorch
 
 WORKDIR /app
 
