@@ -1,4 +1,4 @@
-FROM mciesielintel/tensorflow:1.12.0-py3
+FROM mciesielintel/tensorflow:1.12.0-py2
 
 WORKDIR /app
 
