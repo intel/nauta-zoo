@@ -1,4 +1,0 @@
-name: pytorch-training-py2
-apiVersion: v1
-description: A PyTorch multi-node training job using Python 2.
-version: 0.0.1

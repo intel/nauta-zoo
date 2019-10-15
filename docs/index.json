@@ -31,12 +31,6 @@
       "description": "A PyTorch multi-node training job using Python 3."
     },
     {
-      "name": "pytorch-training-py2",
-      "url": "pytorch-training-py2.tar.bz2",
-      "version": "0.0.1",
-      "description": "A PyTorch multi-node training job using Python 2."
-    },
-    {
       "name": "tf-inference-batch",
       "url": "tf-inference-batch.tar.bz2",
       "version": "0.1.0",
