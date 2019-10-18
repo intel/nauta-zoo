@@ -51,3 +51,5 @@ containerPort: 8500
 image:
   pullPolicy: IfNotPresent
   clusterRepository: {{ NAUTA.ExperimentImage }}
+
+offline_registry: "true"

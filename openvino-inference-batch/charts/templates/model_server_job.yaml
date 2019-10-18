@@ -71,7 +71,11 @@ spec:
               cpu: {{ default .Values.resources.limits.cpu .Values.cpu }}
               memory: {{ default .Values.resources.limits.memory .Values.memory }}
         - name: sidecar
+          {{ if .Values.offline_registry }}
           image: "127.0.0.1:{{ .Values.registryPort }}/nauta/tf-serving-sidecar:v1.0.0"
+          {{ else }}
+          image: "mciesielintel/tf-serving-sidecar:v1.0.0"
+          {{ end }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
           - name: BATCH_WRAPPER_JOB_NAME

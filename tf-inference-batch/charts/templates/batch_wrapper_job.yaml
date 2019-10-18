@@ -27,7 +27,11 @@ spec:
           image: "127.0.0.1:{{ .Values.registryPort }}/nauta/batch-inference:v1.0.0"
           command: ["python3.6", "main.py"]
           args: ["--input_dir_path", "{{ .Values.dataPath }}", "--output_dir_path", "{{ .Values.outputPath }}", "--input_format", "{{ .Values.inputFormat }}" ]
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{ if .Values.offline_registry }}
+          image: "127.0.0.1:{{ .Values.registryPort }}/nauta/batch-inference:v1.0.0"
+          {{ else }}
+          image: "mciesielintel/batch-inference:v1.0.0"
+          {{ end }}
           env:
             - name: TENSORFLOW_MODEL_SERVER_SVC_NAME
               value: "{{ .Release.Name }}:{{ .Values.containerPort }}"

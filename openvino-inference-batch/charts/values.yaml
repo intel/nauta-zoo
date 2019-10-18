@@ -43,3 +43,5 @@ logLevel: 'INFO'
 
 cpu_fraction: 0.5
 memory_fraction: 0.5
+
+offline_registry: "true"
