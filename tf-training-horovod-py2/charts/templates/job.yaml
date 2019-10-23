@@ -112,7 +112,11 @@ spec:
             cpu: {{ default .Values.resources.limits.cpu .Values.cpu }}
             memory: {{ default .Values.resources.limits.memory .Values.memory }}
       - name: kubectl
+        {{ if .Values.offline_registry }}
         image: "127.0.0.1:{{ .Values.registryPort }}/nauta/kubectl:1.15.3"
+        {{ else }}
+        image: "bitnami/kubectl:1.15.3"
+        {{ end }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
           - name: STS_NAME

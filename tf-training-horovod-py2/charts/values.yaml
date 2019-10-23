@@ -109,3 +109,5 @@ volumes:
   - name: output-public
     persistentVolumeClaim:
       claimName: output-public
+
+offline_registry: true
