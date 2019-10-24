@@ -1,4 +1,4 @@
-FROM mciesielintel/horovod:1.9.0-py3
+FROM mciesielintel/horovod:1.9.0-py2
 
 WORKDIR /app
 
