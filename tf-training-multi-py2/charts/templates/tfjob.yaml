@@ -183,7 +183,11 @@ spec:
                   cpu: {{ default .Values.ps_resources.limits.cpu .Values.ps_cpu }}
                   memory: {{ default .Values.ps_resources.limits.memory .Values.ps_memory }}
             - name: sidecar
+              {{ if .Values.offline_registry }}
               image: "127.0.0.1:{{ .Values.registryPort }}/nauta/tfjob-multinode-sidecar:1.0.0"
+              {{ else }}
+              image: "mciesielintel/tfjob-multinode-sidecar:1.0.0"
+              {{ end }}
               imagePullPolicy: Always
               env:
                 - name: MY_POD_NAME
