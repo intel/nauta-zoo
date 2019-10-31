@@ -7,12 +7,6 @@
       "description": "An interactive session based on Jupyter Notebook using Python 3."
     },
     {
-      "name": "jupyter-py2",
-      "url": "jupyter-py2.tar.bz2",
-      "version": "0.1.0",
-      "description": "An interactive session based on Jupyter Notebook using Python 2."
-    },
-    {
       "name": "openvino-inference-batch",
       "url": "openvino-inference-batch.tar.bz2",
       "version": "0.1.0",
@@ -29,12 +23,6 @@
       "url": "pytorch-training.tar.bz2",
       "version": "0.0.1",
       "description": "A PyTorch multi-node training job using Python 3."
-    },
-    {
-      "name": "pytorch-training-py2",
-      "url": "pytorch-training-py2.tar.bz2",
-      "version": "0.0.1",
-      "description": "A PyTorch multi-node training job using Python 2."
     },
     {
       "name": "tf-inference-batch",
@@ -55,34 +43,16 @@
       "description": "A TensorFlow multi-node training job based on Horovod using Python 3."
     },
     {
-      "name": "tf-training-horovod-py2",
-      "url": "tf-training-horovod-py2.tar.bz2",
-      "version": "0.2.2",
-      "description": "A TensorFlow multi-node training job based on Horovod using Python 2."
-    },
-    {
       "name": "tf-training-multi",
       "url": "tf-training-multi.tar.bz2",
       "version": "0.1.0",
       "description": "A TensorFlow multi-node training job based on TfJob using Python 3."
     },
     {
-      "name": "tf-training-multi-py2",
-      "url": "tf-training-multi-py2.tar.bz2",
-      "version": "0.1.0",
-      "description": "A TensorFlow multi-node training job based on TfJob using Python 2."
-    },
-    {
       "name": "tf-training-single",
       "url": "tf-training-single.tar.bz2",
       "version": "0.1.0",
       "description": "A TensorFlow single-node training job based on TfJob using Python 3."
-    },
-    {
-      "name": "tf-training-single-py2",
-      "url": "tf-training-single-py2.tar.bz2",
-      "version": "0.1.0",
-      "description": "A TensorFlow single-node training job based on TfJob using Python 2."
     }
   ]
 }
