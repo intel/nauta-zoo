@@ -1,4 +1,0 @@
-name: jupyter-py2
-apiVersion: v1
-description: An interactive session based on Jupyter Notebook using Python 2.
-version: 0.1.0
