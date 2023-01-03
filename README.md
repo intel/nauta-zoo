@@ -1,3 +1,7 @@
+# DISCONTINUATION OF PROJECT #
+This project will no longer be maintained by Intel.
+Intel has ceased development and contributions including, but not limited to, maintenance, bug fixes, new releases, or updates, to this project.
+Intel no longer accepts patches to this project.
 # Nauta template's repository
 
 This repository contains pack's templates used by the [Nauta](https://github.com/IntelAI/nauta) system. 
