@@ -1,0 +1,42 @@
+# Default values for charts.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+commandline:
+  args:
+    {% for arg in NAUTA.CommandLine %}
+    - {{ arg }}
+    {% endfor %}
+
+image:
+  pullPolicy: IfNotPresent
+  clusterRepository: {{ NAUTA.ExperimentImage }}
+
+worker_resources:
+  requests:
+    cpu: 76
+    memory: 252.7Gi
+  limits:
+    cpu: 76
+    memory: 252.7Gi
+
+worker_cpu: null
+worker_memory: null
+
+master_resources:
+  requests:
+    cpu: 76
+    memory: 252.7Gi
+  limits:
+    cpu: 76
+    memory: 252.7Gi
+
+master_cpu: null
+master_memory: null
+
+experimentName: {{ NAUTA.ExperimentName }}
+
+workersCount: 1
+
+cpu_fraction: 1
+memory_fraction: 1
